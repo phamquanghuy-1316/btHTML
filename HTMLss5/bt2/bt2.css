@@ -1,0 +1,17 @@
+*{
+    background-color: black;
+    color: aliceblue;
+}
+
+img{
+    width: 500px;
+    height: auto;
+    margin: 10px;
+}
+
+p{
+    text-decoration: underline dotted;
+    font-style: italic;
+    font-size: xx-large;
+    color:chartreuse;
+}
