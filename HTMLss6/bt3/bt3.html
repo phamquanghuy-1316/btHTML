@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            margin-right: 15px;
+        }
+        .begin{
+            display: flex;
+            align-items: center;
+            background-color: black;
+            color: white;
+        }
+        .begin a:visited{
+            color: white;
+        }
+        .begin a:link{
+            color: white;
+        }
+        .end a:link{
+            color: black;
+        }
+        .end a:visited{
+            color: black;
+        }
+        .link{
+            margin-left: 70%;
+        }
+        .picture-Text{
+            display: flex;
+            align-items: center;
+            background-color: lightgray;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            border: 5px solid green;
+            margin: 3% 1% 3% 3%;
+        }
+        button{
+            width: 300px;
+            height: 35px;
+            border: none;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .end{
+            margin-top: 30px;
+            display: grid;
+            background-color: rgba(169, 169, 169, .3);
+            height: 50px;
+            place-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="begin">
+        <h2>Porfolio của Quang Huy</h2>
+        <div class="link">
+        <a class="menu" href="">Home</a>
+        <a class="menu" href="">Project</a>
+        <a class="menu" href="">Contact</a>
+        </div>
+    </div>
+    <div class="picture-Text">
+        <img src="https://taocvonline.com/Themes/taocvonline/Content/images/img_avatar.png" alt="">
+        <span>Xin Chào tôi là Quang Huy, một nhà phát triển web sáng tạo.</span>
+    </div>
+    <div class="Projectinf">
+        <h3>dự án của tôi</h3>
+        <button>Dự án 1</button>
+        <button>Dự án 2</button>
+        <button>Dự án 3</button>
+        <button>Dự án 4</button>
+    </div>
+    <div class="end">
+        <p>Kết nối với tôi trên <a href="">Linkedln</a> | <a href="">GitHub</a></p>
+    </div>
+</body>
+</html>

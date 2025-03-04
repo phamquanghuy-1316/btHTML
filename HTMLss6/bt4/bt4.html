@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .begin{
+            width: 100vw;
+            height: 90px;
+            background-color: rgb(27, 142, 1);
+            color: white;
+        }
+        
+        .home{
+            margin-right: 20px;
+        }
+        h1{
+            text-align: center;
+        }
+        .link{
+            margin-left: 45%;
+        }
+        .begin a:visited{
+            color: blue;
+        }
+        .begin a:link{
+            color: blue;
+        }
+        .menu{
+            background-color: rgba(211, 211, 211, .3);
+            width: 300px;
+            height: 700px;
+            margin-top: 10px;
+        }
+        img{
+            width: 300px;
+            height: 200px;
+        }
+        article{
+            margin-left: 30px;
+            width: 80vw;
+        }
+        .end{
+            margin-top: 30px;
+            display: grid;
+            background-color: black;
+            height: 50px;
+            place-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="begin">
+        <h1>My Blog</h1>
+        <div class="link">
+        <a class="home" href="">Home</a>
+        <a class="home" href="">About</a>
+        <a class="home" href="">Contact</a>
+        </div>
+    </div>
+    <div style="display: flex;">
+        <div class="menu">
+            <h3>Chuyên mục</h3>
+            <ul>
+                <li><a href="">CSS</a></li>
+                <li><a href="">JavaScript</a></li>
+                <li><a href="">HTML</a></li>
+            </ul>
+        </div>
+        
+        <div class="baiviet">
+            <article>
+            <h2>Bài Viết 1</h2>
+            <img src="https://tenten.vn/tin-tuc/wp-content/uploads/2022/06/Java-Script-4.jpg" alt="">
+            <p>đây là nội dung tóm tắt bài viết 1</p>
+            </article>
+            <hr>
+            <article>
+            <h2>Bài Viết 2</h2>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTA1xjV9QsWIdWSwKxAW1ymgeLBekz0fP4lg&s" alt="">
+            <p>đây là nội dung tóm tắt bài viết 2</p>
+            </article>
+        </div>
+    </div>
+    <div class="end">
+        <p style="color: white;">Liên hệ email@gmail.com</p>
+    </div>
+</body>
+</html>

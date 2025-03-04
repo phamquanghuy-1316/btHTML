@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        .dad{
+            display: grid;
+            place-items: center;
+            width: 300px;
+            height: 350px;
+            background-color:rgba(128, 128, 128, .1);
+        }
+        .son{
+            background-color: white;
+            width: 95%;
+            height: 95%;
+            border-radius: 15px;
+        }
+        .grandchildren{
+            margin-left: 10%;
+        }
+        input{
+            width: 90%;
+            height: 25px;
+            margin-bottom: 20px;
+        }
+        button{
+            width: 90%;
+            height: 35px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(58, 58, 253);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+    <div class="dad">
+        <div class="son">
+            <h1>Đăng Ký</h1>
+            <div class="grandchildren">
+                <label for="name">Tên: </label>
+                <br>
+                <input type="text" id="name">
+                <br>
+                <label for="email">Email: </label>
+                <br>
+                <input type="email" id="email">
+                <br>
+                <label for="password">Mật Khẩu: </label>
+                <br>
+                <input type="password" id="password">
+                <br>
+                <button type="submit">Đăng Ký</button>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
