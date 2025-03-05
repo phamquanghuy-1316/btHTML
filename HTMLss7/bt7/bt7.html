@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Overlay nền mờ */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Hộp Modal */
+        .modal-box {
+            background: white;
+            width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            position: relative;
+        }
+
+        /* Tiêu đề Modal */
+        .modal-header {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* Nút đóng "X" */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        /* Ô nhập dữ liệu */
+        .modal-input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Khu vực nút bấm */
+        .modal-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        /* Nút */
+        .btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-close {
+            background: gray;
+            color: white;
+        }
+
+        .btn-send {
+            background: blue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Overlay -->
+    <div class="modal-overlay">
+        <div class="modal-box">
+            <!-- Nút Đóng -->
+            <button class="close-btn">&times;</button>
+            
+            <!-- Tiêu đề -->
+            <div class="modal-header">New message to @mdo</div>
+            
+            <!-- Nội dung Form -->
+            <label>Recipient:</label>
+            <input type="text" class="modal-input" value="@mdo" readonly>
+
+            <label>Message:</label>
+            <textarea class="modal-input" rows="4"></textarea>
+
+            <!-- Nút bấm -->
+            <div class="modal-footer">
+                <button class="btn btn-close">Close</button>
+                <button class="btn btn-send">Send message</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
