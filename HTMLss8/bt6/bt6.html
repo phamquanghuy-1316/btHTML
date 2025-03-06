@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Search Input</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000000;
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 10px;
+            border-radius: 50px;
+            box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+            width: 500px;
+        }
+        .search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            padding: 10px;
+        }
+        .search-box .material-icons {
+            color: gray;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-box">
+        <span class="material-icons">search</span>
+        <input type="text" placeholder="Nhập từ khóa tìm kiếm">
+        <span class="material-icons">mic</span>
+        <span class="material-icons">photo_camera</span>
+    </div>
+</body>
+</html>

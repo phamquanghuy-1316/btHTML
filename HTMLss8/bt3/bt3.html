@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            width: 85vw;
+            height: fit-content;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+            margin-left: 20px;
+        }
+        h2{
+            padding-bottom: 10px;
+            width: fit-content;
+            border-bottom: 1px solid red;
+            margin: 40px 0px 0px 40px ;
+        }
+        .child{
+            width: 90%;
+            height: 50%;
+            padding: 20px;
+            
+        }
+
+        #border{
+            padding-left: 50px;
+            border-right: 1px  solid lightgray;
+            border-left: 1px  solid lightgray;
+        }
+
+        img{
+            width: 312px;
+            height: 227px;
+            border-radius: 15px;
+        }
+        button{
+            border: 2px solid rgba(255, 0, 0, .5);
+            color: rgba(255, 0, 0);
+            background-color: white;
+            width: 70px;
+            height: 40px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #ddd;
+        }
+        p{
+            opacity: .7;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ipsum sed dolor</h2>
+    <div class="parent">
+        <div class="child">
+            <img src="https://www.success.com/wp-content/uploads/2017/02/insecureleader.jpg" alt="">
+            <h3>Interdum aenean</h3>
+            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+            <button>More</button>
+        </div>
+        <div class="child" id="border">
+            <img src="https://images.squarespace-cdn.com/content/v1/5bfc3f54620b850d2cc9c374/1563308449606-SN4UDF35K0GPWNP1NQ1S/Cut+paste+square.jpg?format=2500w" alt="">
+            <h3>Nulla amet dolore</h3>
+            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+            <button>More</button>
+        </div>
+        <div class="child">
+            <img src="https://wp-api.revert.pl/wp-content/uploads/2019/03/pic03-300x185.jpg" alt="">
+            <h3>Tempus ullamcorper</h3>
+            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+            <button>More</button>
+        </div>
+    </div>
+</body>
+</html>
