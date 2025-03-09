@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header{
+            display: flex;
+            align-items: center;
+            background-color: lightskyblue;
+            color: white;
+            height: 40px;
+        }
+        .parent{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            gap: 5px;
+            margin: 5px 0px 5px 0px;
+        }
+        footer{
+            display: flex;
+            align-items: center;
+            background-color: purple;
+            color: white;
+            height: 40px;
+        }
+        .child1{
+            padding-top: 10px;
+            padding-left: 10px;
+            background-color: lightgreen;
+            color: white;
+            width: 15%;
+        }
+        .child2{
+            padding-top: 10px;
+            padding-left: 10px;
+            background-color: red;
+            width: 100%;
+            color: white;
+        }
+        .container{
+            width: 80vw;
+            height: 40vh;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>Header</header>
+        <div class="parent">
+            <span class="child1">Sidebar</span>
+            <span class="child2">Content</span>
+        </div>
+        <footer>Footer</footer>
+    </div>
+</body>
+</html>

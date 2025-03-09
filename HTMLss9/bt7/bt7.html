@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Sigmar&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            color: white;
+            height: 50px;
+            padding:30px;
+        }
+        footer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+            height: 50px;
+            padding:30px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        .logo{
+            font-family: "Noto Sans", sans-serif;
+            padding-left: 100px;
+            font-size: 24px;
+        }
+        nav{
+            display: flex;
+            gap:15px;
+        }
+        a{
+            color: white;
+        }
+        .body{
+            position: absolute;
+            top: 15%;
+            left: 20%;
+            
+            background-color: lightgray;
+            padding: 30px 10px;
+            width: 25vw;
+            height: 70vh;
+            font-size: 16px;
+        }
+        .content p{
+            position: relative;
+            overflow: hidden;
+            max-height: 20px;
+            margin-bottom: 20px;
+            transition: max-height 0.5s ease;
+        }
+        label{
+            color: blue;
+            border: none;
+            background-color: inherit;      
+        }
+        label:hover{
+            cursor: pointer;        
+        }
+        #readmore{
+            display: none;
+        }
+        #readmore:checked + .content p{
+            max-height: 600px;
+        }
+        h3{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">MY BLOG</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Post</a>
+            <a href="#">Contract</a>
+        </nav>
+    </header>
+    <div class="body">
+        <div class="body-1">
+            <h2>Bài viết nổi bật</h2>
+            <input type="checkbox" id="readmore">
+            <div class="content">
+                <h1>Tiều đề bài viết chính</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti repudiandae non est ex corporis inventore dolorum dolores quaerat molestias blanditiis, quidem voluptates nesciunt facere doloribus cupiditate eveniet eos eius vel!</p>
+                <label for="readmore">Đọc thêm</label>
+            </div>
+        </div>
+        <div class="body-2">
+            <h2>Các bài viết khác</h2>
+            <h3>Bài viết 1</h3>
+            <p>Lorem ipsum dolor sit, amet...</p>
+            <h3>Bài viết 2</h3>
+            <p>Lorem ipsum dolor sit, amet...</p>
+            <h3>Bài viết 3</h3>
+            <p>Lorem ipsum dolor sit, amet...</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; My Blog. All rights reserved.</p>
+    </footer>
+</body>
+</html>
