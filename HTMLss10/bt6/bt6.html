@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/7b988689d5.js" crossorigin="anonymous"></script>
+    <style>
+        header{
+            position: relative;
+            background-image: url(https://www.chromethemer.com/download/hd-wallpapers/lionel-messi-football-3840x2160.jpg);
+            background-size:cover;
+            background-repeat:no-repeat;
+            height: 80vh;
+            width: 100vw;
+
+        }
+        .filter{
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0,0.4);
+            height: 80vh;
+            width: 100vw;
+
+        }
+        .content{
+            position: absolute;
+            bottom: 40px;
+            width: 60%;
+            color: white;
+            font-size: 16px;
+
+        }
+        header>button{
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color:inherit;
+            border: 1px solid white;
+            color: white;
+            width: 100px;
+            height: 30px;
+
+        }
+        footer{
+            display: flex;
+            height: 20vh;
+            gap: 10px;
+            justify-content: end;
+            align-items: center;
+        }
+        .pointer{
+            width: 45px;
+            height: 30px;
+            background-color: gray;
+            color: white;
+            border: none;
+            transition: all 0.3s ease-out;
+        }
+        .pagenumber{
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+            border: none;
+            background-color: rgba(0, 0, 0,0);
+            color: gray;
+            transition: all 0.3s ease-out;
+        }
+        .pagenumber:hover{
+            background-color: rgba(0, 0, 0,1);
+            color: white;
+        }
+        .pointer:hover{
+            background-color: rgba(0, 0, 0,1);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="filter"></div>
+        <button>Football</button>
+        <div class="content">
+            <p class="date">Agence France-Presse - 04 June 2023</p>
+            <h1>LIONEL MESSI LEAVING LIGUE 1 TEAM
+                PARIS SAINT-GERMAIN, CLUB CONFIRMS</h1>
+            <p>The EuroLeague Finals Top Scorer is the individual award for the player
+                that gained the highest points in the EuroLeague Finals.</p>
+        </div>
+        
+    </header>
+    <footer>
+        <button class="pointer"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="pagenumber">1</button>
+        <button class="pagenumber">2</button>
+        <button class="pagenumber">3</button>
+        <button class="pagenumber">4</button>
+        <button class="pointer"><i class="fa-solid fa-arrow-right"></i></button>
+    </footer>
+</body>
+</html>
