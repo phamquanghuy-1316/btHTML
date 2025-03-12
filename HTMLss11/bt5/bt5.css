@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    background: #ddd;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    background: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    padding: 10px;
+    color: #8B3E3E;
+}
+
+nav {
+    background: #8B3E3E;
+    width: 90%;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+/* Main & Aside */
+#main, #aside {
+    background: #8B3E3E;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+/* Columns */
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.column {
+    background: #8B3E3E;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    flex: 1;
+}
+
+/* Desktop (≥ 1200px) */
+@media (min-width: 1200px) {
+    .container {
+        display: grid;
+        grid-template-areas:
+            "header header"
+            "main aside"
+            "columns columns";
+        grid-template-columns: 2fr 1fr;
+        gap: 10px;
+    }
+
+    header {
+        grid-area: header;
+    }
+
+    #main {
+        grid-area: main;
+    }
+
+    #aside {
+        grid-area: aside;
+    }
+
+    .columns {
+        grid-area: columns;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 cột */
+        grid-template-rows: repeat(2, auto);  /* 2 hàng */
+    }
+}
+
+/* Tablet (768px → 1200px) */
+@media (max-width: 1200px) and (min-width: 768px) {
+    .container {
+        display: grid;
+        grid-template-areas:
+            "header header"
+            "main main"
+            "aside aside"
+            "columns columns";
+        gap: 10px;
+    }
+
+    header {
+        grid-area: header;
+    }
+
+    #main {
+        grid-area: main;
+    }
+
+    #aside {
+        grid-area: aside;
+    }
+
+    .columns {
+        grid-area: columns;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 cột */
+        grid-template-rows: repeat(2, auto);  /* 2 hàng */
+    }
+}
+
+/* Mobile (< 768px) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    .menu-btn {
+        display: block; /* Hiển thị nút menu */
+    }
+
+    #aside {
+        display: none;
+    }
+
+    .columns {
+        display: flex;
+        flex-direction: column; /* Xếp dọc */
+    }
+
+    .column {
+        width: 100%;
+    }
+}

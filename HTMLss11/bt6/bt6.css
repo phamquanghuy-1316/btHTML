@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    text-align: center;
+    grid-template-areas: 
+        'header'
+        'content'
+        'signup'
+        'feature1'
+        'feature2'
+        'feature3'
+    ;
+}
+
+header{
+    background-color: lightskyblue;
+    grid-area: header;
+    width: 100%;
+    height: 30vh;
+}
+.content{
+    background-color: lightgray;
+    grid-area: content;
+    width: 100%;
+    height: 30vh;
+}
+.signup{
+    background-color: lightblue;
+    grid-area: signup;
+    width: 100%;
+    height: 30vh;
+}
+.feature1{
+    background-color:coral;
+    grid-area: feature1;
+    width: 100%;
+    height: 30vh;
+}
+.feature2{
+    background-color:rgb(255, 80, 103);
+    grid-area: feature2;
+    width: 100%;
+    height: 30vh;
+}
+.feature3{
+    background-color:rgb(122, 110, 255);
+    grid-area: feature3;
+    width: 100%;
+    height: 30vh;
+}
+
+@media(min-width:768px){
+    body{
+        display: grid;
+        text-align: center;
+        grid-template-areas: 
+            'header header'
+            'content content'
+            'signup feature1'
+            'feature3 feature2'
+        ;
+    }
+}
+
+@media(min-width:1200px){
+    body{
+        display: grid;
+        text-align: center;
+        grid-template-areas: 
+            'header header header'
+            'feature1 feature3 feature2'
+            'signup signup signup'
+            'content content content'
+        ;
+    }
+}
