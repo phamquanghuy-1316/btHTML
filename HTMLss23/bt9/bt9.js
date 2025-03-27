@@ -23,7 +23,7 @@ function(){
                 }
                 break;
             case 2:
-                document.writeln(`arr = [${arr}]`);
+                alert(`arr = [${arr}]`);
                 break;
             case 3:
                 let tongChan = 0;
@@ -32,7 +32,7 @@ function(){
                         tongChan += arr[i];
                     }
                 }
-                document.writeln(`Tổng các số chẵn: `, tongChan);
+                alert(`Tổng các số chẵn: `, tongChan);
                 break;
             case 4:
                 let max = arr[0], min = arr[0];
@@ -75,14 +75,14 @@ function(){
                     }
                 }
                 if (count == 0) {
-                    document.writeln(`số ${m} không tồn tại trong mảng`);
+                    alert(`số ${m} không tồn tại trong mảng`);
                 } else {
-                    document.writeln(`số ${m} xuất hiện ${count} lần`);
+                    alert(`số ${m} xuất hiện ${count} lần`);
                 }
                 break;
             case 7:
                 if (index < 0) {
-                    console.log("Vị trí không hợp lệ!");
+                    alert("Vị trí không hợp lệ!");
                 } else if (index >= arr.length) {
                     arr.push(newElement); 
                 } else {
