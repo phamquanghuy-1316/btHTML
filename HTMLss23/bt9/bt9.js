@@ -1,16 +1,18 @@
 function(){
-    while (1) {
-        document.writeln(`===================MENU===================`);
-        document.writeln(`1.Nhập số phần tử cần nhập và giá trị`);
-        document.writeln(`2.In ra giá trị các phần tử đang quản lý`);
-        document.writeln(`3.In ra các giá trị các phần tử chẵn và tính tổng`);
-        document.writeln(`4.In ra giá trị lớn nhất và nhỏ nhất trong mảng`);
-        document.writeln(`5.In ra cách phần tử là số nguyên tố trong mảng và tính tổng `);
-        document.writeln(`6.Nhập vào một số và thống kê trong mảng có bao nhiêu phần tử đó`);
-        document.writeln(`7.Thêm một phần tử vào vị trí chỉ định`);
-        document.writeln(`8. thoát`);
         let arr = [];
-        let choice = +prompt("nhập lựa chọn");
+    while (1) {
+        let choice = +prompt('
+                             ===================MENU===================
+                            1.Nhập số phần tử cần nhập và giá trị
+                            2.In ra giá trị các phần tử đang quản lý
+                            3.In ra các giá trị các phần tử chẵn và tính tổng
+                            4.In ra giá trị lớn nhất và nhỏ nhất trong mảng
+                            5.In ra cách phần tử là số nguyên tố trong mảng và tính tổng
+                            6.Nhập vào một số và thống kê trong mảng có bao nhiêu phần tử đó
+                            7.Thêm một phần tử vào vị trí chỉ định
+                            8. thoát
+                            nhập lựa chọn
+            ');
         switch (choice) {
             case 1:
                 let n = +prompt("nhập số phần tử muốn nhập vào mảng ");
