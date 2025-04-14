@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+<body>
+  <div class="addContainer">
+    <form onsubmit="handleSubmit(event)">
+      <label for="addName">nhập tên sản phẩm:</label>
+      <input type="text" id="addName" name="addName">
+      <label for="addPrice">nhập giá sản phẩm:</label>
+      <input type="text" id="addPrice" name="addPrice">
+      <button type="submit" id="add">Thêm</button>
+      <label for="searchItem">Tìm kiếm sản phẩm:</label>
+    </form>
+    <input type="text" id="searchItem" name="searchItem">
+    <button id="search" onclick="searchItem()">Search</button>
+  </div>
+  <div id="ItemList">
+
+  </div>
+    <script src="./main.js"></script>
+</body>
+</html>

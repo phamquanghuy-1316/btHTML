@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="addBox">
+            <form id="edit" onsubmit="handleSubmit(event)">
+                <h1>Thêm Liên Hệ </h1>
+                <label for="InputName">Họ và Tên:</label>
+                <input required id="InputName" name="InputName" type="text">
+                <label for="InputNum">Số điện thoại:</label>
+                <input required id="InputNum" name="InputNum" type="text">
+                <label for="InputEmail">Email:</label>
+                <input required id="InputEmail" name="InputEmail" type="email">
+                <button type="submit">Thêm</button>
+            </form>
+        </div>
+        <div class="contracList">
+            <table id="contactTable">
+                <thead>
+                  <tr>
+                    <th>STT</th>
+                    <th>Họ Tên</th>
+                    <th>Số Điện Thoại</th>
+                    <th>Email</th>
+                    <th>Thao Tác</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+              </table>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>

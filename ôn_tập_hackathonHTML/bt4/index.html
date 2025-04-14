@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1>Quản lý ước mơ</h1>
+    <br>
+    <div class="addBox">
+        <form onsubmit="handleSubmit(event)">
+            <input required type="text" name="inputname" placeholder="thêm mục tiêu">
+            <h3>Mức độ quan trọng</h3>
+            <div>
+                <input required type="radio" name="inputlevel" id="inputlevel" value="Cao" checked>Cao
+                <input required type="radio" name="inputlevel" id="inputlevel" value="Vừa">Vừa
+                <input required type="radio" name="inputlevel" id="inputlevel" value="Thấp">Thấp
+            </div>
+            <h3>Trạng thái</h3>
+            <div>
+                <input type="radio" name="inputStatus" id="inputStatus" value="Đã đạt">Đã đạt
+                <input type="radio" name="inputStatus" id="inputStatus" value="Chưa đạt" checked>Chưa đạt
+            </div>
+            <button type="submit">Thêm</button>
+        </form>
+    </div>
+    <br>
+    <div class="targetList">
+        <ul id="myUL">
+
+        </ul>
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>
