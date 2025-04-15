@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Danh sách nhân viên Rikkei</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f7f7f7;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      padding: 8px;
+      margin: 5px;
+      width: 200px;
+    }
+
+    button {
+      padding: 8px 12px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    table {
+      width: 80%;
+      margin: 20px auto;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    th {
+      background-color: #eee;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Danh sách nhân viên Rikkei</h1>
+
+  <div>
+    <label>tên nhân viên</label>
+    <input type="text" id="nameInput" placeholder="Nhập tên nhân viên">
+    <label>chức vụ</label>
+    <input type="text" id="positionInput" placeholder="Nhập chức vụ">
+    <br>
+    <button onclick="addEmployee()">thêm nhân viên</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Tên</th>
+        <th>Chức vụ</th>
+      </tr>
+    </thead>
+    <tbody id="employeeTableBody">
+      <!-- Danh sách nhân viên sẽ được render ở đây -->
+    </tbody>
+  </table>
+
+  <script>
+    let employees = JSON.parse(localStorage.getItem('employees')) || [];
+
+    function renderEmployees() {
+      const tableBody = document.getElementById('employeeTableBody');
+      tableBody.innerHTML = '';
+      employees.forEach((emp, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${index + 1}</td>
+          <td>${emp.name}</td>
+          <td>${emp.position}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+
+    function addEmployee() {
+      const name = document.getElementById('nameInput').value.trim();
+      const position = document.getElementById('positionInput').value.trim();
+
+      if (name === '' || position === '') {
+        alert('Vui lòng nhập đầy đủ thông tin!');
+        return;
+      }
+
+      employees.push({ name, position });
+      localStorage.setItem('employees', JSON.stringify(employees));
+      renderEmployees();
+
+      document.getElementById('nameInput').value = '';
+      document.getElementById('positionInput').value = '';
+    }
+
+    // Hiển thị dữ liệu khi tải trang
+    window.onload = renderEmployees;
+  </script>
+
+</body>
+</html>
