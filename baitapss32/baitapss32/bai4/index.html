@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="email" placeholder="Nhập email">
+    <div id="messageArea"></div>
+    <button id="checkBtn">Check</button>
+    <script>
+        const emailInput = document.getElementById("email");
+        const checkBtn = document.getElementById("checkBtn");
+        const messageArea = document.getElementById("messageArea");
+
+        const isValidEmail = (email) => {
+            return /^[^\s@]+@[^\s@]+\.(com|vn)$/.test(email);
+        };
+
+        checkBtn.addEventListener("click", () => {
+            messageArea.innerHTML = "";
+            const email = emailInput.value.trim();
+            const result = document.createElement("p");
+
+            if (isValidEmail(email)) {
+                result.textContent = "email hợp lệ!";
+                result.style.color = "green";
+            } else {
+                result.textContent = "email không hợp lệ!";
+                result.style.color = "red";
+            }
+
+            messageArea.appendChild(result);
+        });
+    </script>
+</body>
+
+
+</html>

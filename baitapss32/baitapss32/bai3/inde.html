@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm môn học</title>
+    <style>
+        input,
+        button {
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>Nhập tên môn học</h3>
+    <input type="text" id="subjectInput" placeholder="nhập tên môn học">
+    <button id="addButton">Thêm môn học</button>
+
+    <ol id="subjectList"></ol>
+
+    <script>
+        const subjectInput = document.getElementById("subjectInput");
+        const addButton = document.getElementById("addButton");
+        const subjectList = document.getElementById("subjectList");
+
+        addButton.addEventListener("click", () => {
+            const subject = subjectInput.value.trim();
+
+            if (subject === "") {
+                alert("Tên môn học không được để trống!");
+                return;
+            }
+            const newItem = document.createElement("li");
+            newItem.textContent = subject;
+            subjectList.appendChild(newItem);
+
+            subjectInput.value = "";
+        });
+    </script>
+
+</body>
+
+</html>

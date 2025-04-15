@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Click đổi màu</title>
+    <style>
+        body {
+
+            padding: 50px;
+        }
+
+        button {
+            padding: 1px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="Btn">Bấm vào tôi</button>
+    <p id="result"></p> <!-- dùng thẻ p nè -->
+
+    <script>
+        let count = 0;
+        const Btn = document.querySelector("#Btn");
+        const result = document.querySelector("#result");
+
+        Btn.addEventListener("click", () => {
+            count++;
+            result.textContent = `Số lần bấm: ${count}`;
+        });
+    </script>
+</body>
+
+</html>

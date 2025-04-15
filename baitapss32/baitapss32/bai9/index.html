@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tiến trình</title>
+    <style>
+        .progress-container {
+            width: 300px;
+            height: 25px;
+            background-color: #eee;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background-color: rgba(0, 200, 0, 0.3);
+            transition: width 0.3s, background-color 0.3s;
+        }
+
+        button {
+            margin-right: 10px;
+            padding: 8px 12px;
+            cursor: pointer;
+            background-color: rgb(4, 4, 235);
+            opacity: 0.8;
+            border-radius: 10px;
+            color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Progress Bar with Background Effect</h2>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="bar"></div>
+    </div>
+
+    <button id="increase">Tăng tiến trình</button>
+    <button id="decrease">Giảm tiến trình</button>
+
+    <script>
+        const bar = document.getElementById('bar');
+        const btnUp = document.getElementById('increase');
+        const btnDown = document.getElementById('decrease');
+        let progress = 0;
+
+        function updateBar() {
+            bar.style.width = progress + "%";
+        }
+
+        btnUp.addEventListener("click", () => {
+            if (progress < 100) {
+                progress += 10;
+                updateBar();
+            }
+        });
+
+        btnDown.addEventListener("click", () => {
+            if (progress > 0) {
+                progress -= 10;
+                updateBar();
+            }
+        });
+    </script>
+
+</body>
+
+</html>
