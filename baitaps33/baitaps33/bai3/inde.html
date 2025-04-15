@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select id="category">
+        <option value="">-- Lựa chọn danh mục --</option>
+        <option value="Đồ ăn">Đồ ăn</option>
+        <option value="Nước">Nước</option>
+        <option value="Dụng cụ">Dụng cụ</option>
+    </select>
+    <button onclick="filterDish()">Lọc</button>
+
+    <ul id="result"></ul>
+    <script>
+        let dish = [{
+                name: 'Rau sạch',
+                category: 'Đồ ăn'
+            },
+            {
+                name: 'Thịt lợn',
+                category: 'Đồ ăn'
+            },
+            {
+                name: 'Pepsi không calo',
+                category: 'Nước'
+            },
+            {
+                name: 'Cocacola',
+                category: 'Nước'
+            },
+            {
+                name: 'Cờ lê',
+                category: 'Dụng cụ'
+            },
+            {
+                name: 'Tuy vít',
+                category: 'Dụng cụ'
+            },
+        ];
+
+        function filterDish() {
+            const selectedCategory = document.getElementById('category').value;
+            const resultList = document.getElementById('result');
+
+            resultList.innerHTML = '';
+
+            const filtered = dish.filter(item => item.category === selectedCategory);
+
+            filtered.forEach(item => {
+                const li = document.createElement('li');
+                li.innerHTML =
+                    `<strong>Tên đồ ăn:</strong> ${item.name} - <strong>Danh mục:</strong> ${item.category}`;
+                resultList.appendChild(li);
+            });
+            if (selectedCategory === '') {
+                dish.forEach(item => {
+                    const li = document.createElement('li');
+                    li.innerHTML =
+                        `<strong>Tên đồ ăn:</strong> ${item.name} - <strong>Danh mục:</strong> ${item.category}`;
+                    resultList.appendChild(li);
+                });
+            }
+        }
+    </script>
+
+</body>
+
+</html>

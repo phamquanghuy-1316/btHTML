@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cửa hàng Đơn giản</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .product-card {
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            background: #fff;
+        }
+
+        .product-img {
+            height: 150px;
+            object-fit: contain;
+        }
+
+        .cart-box {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .cart-item {
+            border-bottom: 1px solid #ddd;
+            padding: 8px 0;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .button {
+            background-color: green;
+            border: 0px;
+        }
+
+        .btn {
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container py-4">
+        <h3 class="text-center fw-bold mb-4">Cửa hàng Đơn giản</h3>
+        <div class="row">
+            <!-- Danh sách sản phẩm -->
+            <div class="col-md-8">
+                <h5 class="fw-bold mb-3">Sản phẩm</h5>
+                <div class="row g-3" id="product-list"></div>
+            </div>
+
+            <!-- Giỏ hàng -->
+            <div class="col-md-4 ">
+                <div class="cart-box">
+                    <h5 class="fw-bold mb-3">Giỏ hàng</h5>
+                    <div id="cart-list"></div>
+                    <div class="mt-3 text-end">
+                        <strong>Tổng: <span id="total-price">0</span><sup>₫</sup></strong>
+                        <p class="p mb-3 text-center">Danh sách trống </p>
+                    </div>
+                    <button class="btn btn-primary w-100 mt-3">Thanh toán</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const products = [{
+                id: 1,
+                name: "Điện thoại Samsung Galaxy A54",
+                price: 7490000,
+                image: "https://cdn.tgdd.vn/Products/Images/42/88573/samsung-galaxy-j2-prime-hh-600x600.jpg"
+            },
+            {
+                id: 2,
+                name: "Laptop Dell Inspiron 15",
+                price: 15990000,
+                image: "https://thegioiso365.vn/wp-content/uploads/2021/01/dell-xps-15-9560-core-i5-man-hinh-4k-p2903.png"
+            },
+            {
+                id: 3,
+                name: "Tai nghe AirPods Pro",
+                price: 4990000,
+                image: "https://store.sony.com.vn/cdn/shop/files/Primary_image_1-1.jpg?v=1727175690"
+            },
+            {
+                id: 4,
+                name: "Đồng hồ Apple Watch",
+                price: 8990000,
+                image: "https://bgr.com/wp-content/uploads/2023/09/Apple-Watch-Series-9.jpg?quality=82&strip=all"
+            },
+            {
+                id: 5,
+                name: "Máy ảnh Canon EOS M50",
+                price: 12490000,
+                image: "https://misahouse.com/wp-content/uploads/2022/11/586c6c34be0940bf909a3e790c7f0fe4.jpg"
+            },
+            {
+                id: 6,
+                name: "Loa Bluetooth JBL Flip 5",
+                price: 2190000,
+                image: "https://bizweb.dktcdn.net/100/098/272/files/may-hat-loa-ken.jpg?v=1641988472036"
+            },
+        ];
+
+        let cart = [];
+
+        function formatCurrency(num) {
+            return num.toLocaleString("vi-VN");
+        }
+
+        function renderProducts() {
+            const list = document.getElementById("product-list");
+            list.innerHTML = "";
+            products.forEach(p => {
+                list.innerHTML += `
+        <div class="col-md-4">
+          <div class="product-card">
+            <img src="${p.image}" class="w-100 product-img mb-2" alt="${p.name}">
+            <h6>${p.name}</h6>
+            <p class="text-danger fw-bold">${formatCurrency(p.price)}<sup>₫</sup></p>
+            <button class="btn btn-success btn-sm w-100" onclick="addToCart(${p.id})">Thêm vào giỏ hàng</button>
+          </div>
+        </div>`;
+            });
+        }
+
+        function addToCart(id) {
+            const p = document.querySelector(".p")
+            console.log(p)
+            const item = cart.find(c => c.id === id);
+            if (item) {
+                item.qty++;
+            } else {
+                const product = products.find(p => p.id === id);
+                cart.push({
+                    ...product,
+                    qty: 1
+                });
+            }
+            p.style.display = "none"
+            renderCart();
+        }
+
+        function changeQty(id, delta) {
+            const item = cart.find(c => c.id === id);
+            if (!item) return;
+            item.qty += delta;
+            if (item.qty <= 0) {
+                cart = cart.filter(c => c.id !== id);
+            }
+            renderCart();
+        }
+
+        function renderCart() {
+            const list = document.getElementById("cart-list");
+            const total = document.getElementById("total-price");
+            list.innerHTML = "";
+            let sum = 0;
+
+            cart.forEach(item => {
+                sum += item.qty * item.price;
+                list.innerHTML += `
+        <div class="cart-item">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <strong>${item.name}</strong><br>
+              <small>${formatCurrency(item.price)}<sup>₫</sup> x ${item.qty}</small>
+            </div>
+            <div>
+              <button class=" button btn btn-sm btn-outline-dark" onclick="changeQty(${item.id}, -1)">-</button>
+              <span class="mx-1">${item.qty}</span>
+              <button class=" button btn btn-sm btn-outline-dark" onclick="changeQty(${item.id}, 1)">+</button>
+              <button class="btn btn-sm btn-danger ms-2" onclick="changeQty(${item.id}, -${item.qty})">X</button>
+            </div>
+          </div>
+        </div>
+      `;
+            });
+
+            total.textContent = formatCurrency(sum);
+        }
+
+        renderProducts();
+    </script>
+</body>
+
+</html>
