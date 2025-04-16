@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: #775aab;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            background-color: aqua;
+            border: none;
+            padding: 20px;
+            cursor: pointer;
+        }
+
+        .container {
+            background-color: white;
+            width: 600px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 10px;
+            height: auto;
+         
+
+        }
+       
+
+        .form {
+            background-color: #f5f5f5;
+            display: none;
+            position: relative;
+            width: 40%;
+            height: auto;
+        }
+
+        .lac {
+            background-color: #775aab;
+            color: white;
+        }
+
+        label {
+            color: #775aab;
+        }
+
+        input {
+            border: 3px solid #775aab;
+        }
+
+        h3 {
+            background-color: #775aab;
+            color: white;
+            padding: 10px;
+        }
+
+        .x {
+            position: absolute;
+            top: 10px;
+            color: white;
+            left: 540px;
+            font-size: 27px;
+            border: none;
+            background-color: #775aab;
+
+        }
+
+        .box {
+            background-color: aquamarine;
+            color: black;
+            width: 90%;
+            height: 10vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        span {
+            font-size: 30px;
+        }
+
+        img {
+            width: 40px;
+            height: 40px;
+        }
+      
+    </style>
+    <title>Document</title>
+</head>
+
+<body id="body">
+
+    <h1 onclick="showmenu()">ADD BOOKMARK</h1>
+    <div id="container" class="container"></div>
+
+
+    <div class="form" id="form">
+        <h3>Add Bookmark</h3>
+        <form class="border border-black p-4 shadow">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Webside Name</label>
+                <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Website URL</label>
+                <input type="url" class="form-control" id="web-Url">
+            </div>
+            <button onclick="chan()" type="button" class="lac btn">Submit</button>
+        </form>
+        <button onclick="lac()" type="button" class="x">X</button>
+    </div>
+
+    <div class="parent">
+
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
