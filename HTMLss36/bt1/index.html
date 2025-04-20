@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chào bạn</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      background-color: lightgray;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      width: 50%;
+      box-shadow: 0px 4px 10px;
+      padding: 20px;
+      gap: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .addbox {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    input {
+      flex: 1;
+      height: 30px;
+      padding: 5px;
+    }
+
+    button {
+      width: 100px;
+      border: none;
+      background-color: cornflowerblue;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: darkblue;
+    }
+
+    #greeting {
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="title">Nhập tên của bạn</h1>
+    
+    <div class="addbox" id="form">
+      <input type="text" id="addName" placeholder="Nhập tên...">
+      <button onclick="saveName()">Lưu</button>
+    </div>
+
+    <div id="greeting" style="display: none;"></div>
+    <button id="changeNameBtn" onclick="changeName()" style="display: none;">Đổi tên</button>
+  </div>
+
+  <script>
+    const nameKey = "userName";
+
+    function saveName() {
+      const name = document.getElementById("addName").value.trim();
+      if (name === "") {
+        alert("Vui lòng nhập tên!");
+        return;
+      }
+      localStorage.setItem(nameKey, name);
+      showGreeting(name);
+    }
+
+    function showGreeting(name) {
+      document.getElementById("title").innerText = "👋 Chào bạn, " + name + "!";
+      document.getElementById("form").style.display = "none";
+      document.getElementById("greeting").style.display = "block";
+      document.getElementById("greeting").innerText = "Chúc bạn một ngày tốt lành!";
+      document.getElementById("changeNameBtn").style.display = "inline-block";
+    }
+
+    function changeName() {
+      localStorage.removeItem(nameKey);
+      document.getElementById("addName").value = "";
+      document.getElementById("form").style.display = "flex";
+      document.getElementById("greeting").style.display = "none";
+      document.getElementById("changeNameBtn").style.display = "none";
+      document.getElementById("title").innerText = "Nhập tên của bạn";
+    }
+
+    window.onload = function () {
+      const storedName = localStorage.getItem(nameKey);
+      if (storedName) {
+        showGreeting(storedName);
+      }
+    };
+  </script>
+</body>
+</html>

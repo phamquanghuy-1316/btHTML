@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h2>🗂️ Quản lý công việc (Task Board)</h2>
+
+    <div class="task-input">
+      <input type="text" id="taskName" placeholder="Nhập tên công việc..." />
+      <button onclick="addTask()">Thêm</button>
+    </div>
+
+    <div class="board">
+      <div class="column" id="pendingCol">
+        <h3>🕐 Chờ xử lý</h3>
+        <div id="pendingTasks">
+          <!-- <div class="task">
+            <p>Nội dung</p>
+            <button>Chuyển tiếp</button>
+          </div> -->
+        </div>
+      </div>
+      <div class="column" id="inProgressCol">
+        <h3>🔨 Đang làm</h3>
+        <div id="inProgressTasks"></div>
+      </div>
+      <div class="column" id="doneCol">
+        <h3>✅ Hoàn thành</h3>
+        <div id="doneTasks">
+          <!-- <div class="task">
+            <p>Nội dung</p>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <script>
+    const taskInput = document.getElementById("taskName");
+    const pendingDiv = document.getElementById("pendingTasks");
+    const progressDiv = document.getElementById("inProgressTasks");
+    const doneDiv = document.getElementById("doneTasks");
+
+    let tasks = [];
+
+    function renderTasks() {
+      // Xoá toàn bộ nội dung cũ
+      pendingDiv.innerHTML = "";
+      progressDiv.innerHTML = "";
+      doneDiv.innerHTML = "";
+
+      tasks.forEach((task, index) => {
+        const div = document.createElement("div");
+        div.className = "task";
+
+        const p = document.createElement("p");
+        p.textContent = task.name;
+
+        div.appendChild(p);
+
+        // Thêm nút chuyển trạng thái nếu chưa hoàn thành
+        if (task.status !== "done") {
+          const btn = document.createElement("button");
+          btn.textContent = "Chuyển trạng thái";
+          btn.onclick = () => {
+            if (task.status === "pending") {
+              tasks[index].status = "inProgress";
+            } else if (task.status === "inProgress") {
+              tasks[index].status = "done";
+            }
+            saveTasks();
+            renderTasks();
+          };
+          div.appendChild(btn);
+        }
+
+        // Thêm vào cột tương ứng
+        if (task.status === "pending") {
+          pendingDiv.appendChild(div);
+        } else if (task.status === "inProgress") {
+          progressDiv.appendChild(div);
+        } else {
+          doneDiv.appendChild(div);
+        }
+      });
+    }
+
+    function addTask() {
+      const name = taskInput.value.trim();
+      if (name === "") {
+        alert("Tên công việc không được để trống!");
+        return;
+      }
+      tasks.push({ name: name, status: "pending" });
+      taskInput.value = "";
+      saveTasks();
+      renderTasks();
+    }
+
+    function saveTasks() {
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+
+    function loadTasks() {
+      const data = localStorage.getItem("tasks");
+      if (data) {
+        tasks = JSON.parse(data);
+      }
+    }
+
+    // Khi tải lại trang
+    window.onload = () => {
+      loadTasks();
+      renderTasks();
+    };
+    </script>
+  </body>
+</html>
